@@ -69,7 +69,7 @@ Now that the Gemfile is finished you will need to run bundle to update the apps 
 ```bash
 ada ~/path/to/my_rails_app $ bin/bundle install --without production
 ```
-Lastly you need to update the Gemfile in Git.
+Lastly you need to update the Gemfile in Git. You also need to add the updated Gemfile.lock. Easiest way to do it is git add *.
 ```bash
 ada ~/path/to/my_rails_app $ git add Gemfile
 ada ~/path/to/my_rails_app $ git commit -m "Updated Gemfile for Heroku"
@@ -100,7 +100,7 @@ Git remote heroku added
 Now everything is ready to deploy your app.  You can use git push to push the current state of the master branch to Heroku:
 
 ```bash
-ada ~/path/to/my_rails_app $ git push 
+ada ~/path/to/my_rails_app $ git push heroku master
 Initializing repository, done.
 ...
 ```
@@ -109,6 +109,13 @@ Lastly you need to create the database tables your app needs to run.
 
 ```bash
 ada ~/path/to/my_rails_app $ heroku run rake db:migrate
+running `rake db:migrate` attached to terminal... up, run.1833
+...
+```
+If you have database tables that you need for your site to run that are in seed, you also need to do this:
+
+```bash
+ada ~/path/to/my_rails_app $ heroku run rake db:seed
 running `rake db:migrate` attached to terminal... up, run.1833
 ...
 ```
