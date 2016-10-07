@@ -116,7 +116,7 @@ If you have database tables that you need for your site to run that are in seed,
 
 ```bash
 ada ~/path/to/my_rails_app $ heroku run rake db:seed
-running `rake db:migrate` attached to terminal... up, run.1833
+Running rake db:seed on ⬢ farmar-app-bmp-ea... up, run.4275 (Free)
 ...
 ```
 
